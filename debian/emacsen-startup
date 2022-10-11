@@ -1,0 +1,17 @@
+;; -*- mode: emacs-lisp -*-
+
+(if (not (file-exists-p "/usr/share/emacs/site-lisp/perlcritic.el"))
+    (message "libperl-critic-perl removed but not purged, skipping setup")
+
+  ;; these setups as recommended in the perlcritic.el comments
+  (autoload 'perlcritic        "perlcritic" nil t)
+  (autoload 'perlcritic-region "perlcritic" nil t)
+  (autoload 'perlcritic-mode   "perlcritic" nil t)
+
+  ;; these per the suggested add-hooks in the perlcritic.el comments, but
+  ;; just offered as options
+  (custom-add-option 'perl-mode-hook  'perlcritic-mode)
+  (custom-add-option 'cperl-mode-hook 'perlcritic-mode))
+
+(if (fboundp 'conf-mode) ;; new in emacs22
+  (add-to-list 'auto-mode-alist '("/\\.perlcriticrc\\'" . conf-mode)))

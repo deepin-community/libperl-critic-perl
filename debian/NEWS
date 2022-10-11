@@ -1,0 +1,30 @@
+libperl-critic-perl (1.096-1) unstable; urgency=low
+
+  From the upstream Changes:
+
+  [1.094] Released on 2009-01-01
+
+    Incompatible Changes:
+    * The way that "## no critic" markers was refactored.  As
+      a result, we discovered that the syntax for the markers was pretty
+      vague.  If you didn't do it just right, it would disable all policies,
+      and not just the specific ones that you wanted.  So we've tightened this
+      up a bit.  If you followed the examples that have been in the docs for
+      the last couple years, then you should be fine.  But if you've been
+      using certain other variations in your "## no critic" markers, then you
+      might suddenly find yourself violating the new
+      ProhibtUnrestrictedNoCritic policy.  To fix this, just make sure your
+      Policy names appear in parentheses:
+
+        ## no critic Foo, Bar, Baz     # wrong!
+        ## no critic Foo Bar Baz       # wrong!
+
+
+        ## no critic (Foo, Bar, Baz)   # ok!
+        ## no critic qw(Foo Bar Baz)   # also ok!
+
+    * The deprecated $FORMAT variables for Perl::Critic::Policy and
+      Perl::Critic::Violation no longer exist.  Use the corresponding
+      get_format() and set_format() functions instead.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 12 Feb 2009 15:23:08 +0100

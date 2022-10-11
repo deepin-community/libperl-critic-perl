@@ -1,0 +1,67 @@
+Source: libperl-critic-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Salvatore Bonaccorso <carnil@debian.org>,
+           gregor herrmann <gregoa@debian.org>,
+           Damyan Ivanov <dmn@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl
+Build-Depends-Indep: libb-keywords-perl,
+                     libconfig-tiny-perl <!nocheck>,
+                     libexception-class-perl <!nocheck>,
+                     libfile-which-perl <!nocheck>,
+                     libio-string-perl <!nocheck>,
+                     liblist-moreutils-perl,
+                     libmodule-pluggable-perl <!nocheck>,
+                     libpod-parser-perl <!nocheck>,
+                     libpod-spell-perl <!nocheck>,
+                     libppi-perl <!nocheck>,
+                     libppix-quotelike-perl <!nocheck>,
+                     libppix-regexp-perl <!nocheck>,
+                     libppix-utilities-perl <!nocheck>,
+                     libreadonly-perl <!nocheck>,
+                     libstring-format-perl <!nocheck>,
+                     libtask-weaken-perl <!nocheck>,
+                     libtest-deep-perl <!nocheck>,
+                     libtest-pod-coverage-perl <!nocheck>,
+                     libtest-pod-perl <!nocheck>,
+                     perl,
+                     perltidy
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libperl-critic-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libperl-critic-perl.git
+Homepage: https://metacpan.org/release/Perl-Critic
+Rules-Requires-Root: no
+
+Package: libperl-critic-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libb-keywords-perl,
+         libconfig-tiny-perl,
+         libexception-class-perl,
+         libfile-which-perl,
+         libio-string-perl,
+         liblist-moreutils-perl,
+         libmodule-pluggable-perl,
+         libpod-parser-perl,
+         libpod-spell-perl,
+         libppi-perl (>= 1.265),
+         libppix-quotelike-perl,
+         libppix-regexp-perl (>= 0.068),
+         libppix-utilities-perl,
+         libreadonly-perl,
+         libstring-format-perl,
+         libtask-weaken-perl,
+         perltidy
+Description: Perl module to critique code for best practices
+ Perl::Critic is an extensible framework for creating and applying software
+ coding policies to Perl source code. By default, it is distributed with a
+ number of policy modules that attempt to enforce various coding guidelines,
+ including those discussed in Damian Conway's Perl Best Practices. However,
+ it is not limited to PBP and will even support policies that contradict PBP.
+ You can enable, disable and customize those policies through the Perl::Critic
+ interface. You can also create new Policy modules to suit your own tastes.
